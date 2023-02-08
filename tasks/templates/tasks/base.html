@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ToDoList</title>
+    <title>{% block title %}{% endblock %} | ToDoList</title>
 </head>
 <body>
     {% load static %}
@@ -11,8 +11,11 @@
     <div id="navbar">
         <img id="logo" src="{% static 'images/cactus.jpg' %}">
         <span>ToDo List</span>
+        {% block menu %} {% endblock %}
     </div>
-    <div id="content"></div>
+    <div id="content">
+        {% block content %} {% endblock %}
+    </div>
     <div id="footer">
         <div>Contact us on mymail@mail.com</div>
         <div>All rights reserved 2023</div>

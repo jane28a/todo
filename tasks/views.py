@@ -5,13 +5,10 @@ from tasks.models import Task
 
 
 def index(request):
-    return render(request, 'tasks/base.html', context={})
-    '''
     context = {
         'tasks': Task.objects.all()
     }
-    return render(request, 'tasks/tasks.html', context=context)
-    '''
+    return render(request, 'tasks/list.html', context=context)
 
 def details(request, task_id):
     try:
